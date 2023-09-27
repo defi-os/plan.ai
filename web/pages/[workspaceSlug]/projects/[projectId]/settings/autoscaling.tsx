@@ -27,8 +27,7 @@ import {
 } from "components/ui";
 import { BreadcrumbItem, Breadcrumbs } from "components/breadcrumbs";
 // icons
-import { PlusIcon, PuzzlePieceIcon } from "@heroicons/react/24/outline";
-import { AutoAwesomeOutlined, AccountTreeOutlined, AttachMoneyOutlined    } from "@mui/icons-material";
+import { WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
 // images
 // types
 import { IProject } from "types";
@@ -86,18 +85,39 @@ const AutoscalingSettings: NextPage = () => {
           <SettingsSidebar />
         </div>
         <div className="pr-9 py-8 gap-10 w-full flex flex-col overflow-y-auto">
-          <div className="flex items-center justify-between pr-5 py-3.5 border-b border-custom-border-200">
-            <h3 className="text-xl font-medium">Autoscaling</h3>
+          <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
+            <div className="flex items-start gap-3">
+              <div className="flex items-center justify-center p-3 rounded bg-custom-background-90">
+                <WrenchScrewdriverIcon className="text-custom-primary-100 w-6 h-6" />
+              </div>
+              <div className="">
+                <h4 className="text-sm font-medium">Outsource & Scale</h4>
+                <p className="text-sm text-custom-text-200 tracking-tight">
+                  Outsource & Scale is enabled for all the projects in this workspace. Access them
+                  from the sidebar.
+                </p>
+              </div>
+            </div>
             <ToggleSwitch
               value={autoscalingToggle}
               onChange={() => setAutoscalingToggle(!autoscalingToggle)}
               size="lg"
             />
           </div>
-          <div className="flex flex-col gap-8">
-            <div className="flex items-center w-full gap-8 justify-between">
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Max amount per job</h4>
+          <div className="flex flex-col gap-4">
+            <div className="text-xl font-bold">Set Limits</div>
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
+              <div className="flex items-start gap-3">
+                <div className="">
+                  <h4 className="text-sm font-medium">Maximum amount per task</h4>
+                  <p className="text-sm text-custom-text-200 tracking-tight">
+                    Choose the maximum amount (in $) you want to spend for each task to be solved.
+                    <br />
+                    This can always be adjusted.
+                  </p>
+                </div>
+              </div>
+              <div className="w-[25%]">
                 <Input
                   id="maxAmt"
                   name="maxAmt"
@@ -106,8 +126,17 @@ const AutoscalingSettings: NextPage = () => {
                   placeholder="max amt/job"
                 />
               </div>
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Max number of concurrent job</h4>
+            </div>
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
+              <div className="flex items-start gap-3">
+                <div className="">
+                  <h4 className="text-sm font-medium">Maximum number of concurrent tasks</h4>
+                  <p className="text-sm text-custom-text-200 tracking-tight">
+                    Choose the amount of tasks that can be outsourced at any point of time
+                  </p>
+                </div>
+              </div>
+              <div className="w-[25%]">
                 <Input
                   id="maxJobs"
                   name="maxJobs"
@@ -117,16 +146,13 @@ const AutoscalingSettings: NextPage = () => {
                 />
               </div>
             </div>
-
-            <div className="flex items-center justify-between gap-x-8 gap-y-2 border-b border-custom-border-200 bg-custom-background-100 p-4">
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
               <div className="flex items-start gap-3">
-                <div className="flex items-center justify-center p-3 rounded bg-custom-background-90">
-                  <AutoAwesomeOutlined className="w-6 h-6" />
-                </div>
                 <div className="">
                   <h4 className="text-sm font-medium">Smart Prioritization</h4>
                   <p className="text-sm text-custom-text-200 tracking-tight">
-                    AI powered task scheduler
+                    Let Plan&apos;s AI prioritize outsourcing your most important issues instead of
+                    outsourcing your tasks chronologically
                   </p>
                 </div>
               </div>
@@ -138,20 +164,15 @@ const AutoscalingSettings: NextPage = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pr-5 py-3.5 border-b border-custom-border-200">
-            <h3 className="text-xl font-medium">open source</h3>
-          </div>
-
-          <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between gap-x-8 gap-y-2 border-b border-custom-border-200 bg-custom-background-100 p-4">
+          <div className="flex flex-col gap-4">
+            <div className="text-xl font-bold">Open Source</div>
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
               <div className="flex items-start gap-3">
-                <div className="flex items-center justify-center p-3 rounded bg-custom-background-90">
-                  <AccountTreeOutlined className="w-6 h-6" />
-                </div>
                 <div className="">
                   <h4 className="text-sm font-medium">Dependency Resolution</h4>
                   <p className="text-sm text-custom-text-200 tracking-tight">
-                    we will help you resolve your open source Dependencies
+                    Let Plan&apos;s AI automatically check, create issues & outsource them as tasks
+                    for all broken dependencies on your codebase
                   </p>
                 </div>
               </div>
@@ -161,99 +182,56 @@ const AutoscalingSettings: NextPage = () => {
                 size="lg"
               />
             </div>
-
-            <div className="flex flex-col gap-3 w-full">
-              <h4 className="text-sm">Dependency depth</h4>
-              <Input
-                id="depDepth"
-                name="DepDepth"
-                type="number"
-                className="!p-3 rounded-md font-medium"
-                placeholder="dependency depth 1 to Max"
-              />
-            </div>
-
-            <div className="flex items-center justify-between gap-x-8 gap-y-2 border-b border-custom-border-200 bg-custom-background-100 p-4">
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
               <div className="flex items-start gap-3">
-                <div className="flex items-center justify-center p-3 rounded bg-custom-background-90">
-                  <AttachMoneyOutlined className="w-6 h-6" />
-                </div>
                 <div className="">
-                  <h4 className="text-sm font-medium">Method of payment</h4>
+                  <h4 className="text-sm font-medium">Funding Amount</h4>
                   <p className="text-sm text-custom-text-200 tracking-tight">
-                    Pay using UDSC or project tokens
+                    Choose the funding for each dependency resolution tasks created for your &/or
+                    external codebases
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4 items-center">
-                {paymentMethod === "USDC" && (
-                  <>
-                    <PrimaryButton className="w-7rem">USDC</PrimaryButton>
-                    <SecondaryButton
-                      className="w-7rem"
-                      onClick={() => setPaymentMethod("project token")}
-                    >
-                      project token
-                    </SecondaryButton>
-                  </>
-                )}
-                {paymentMethod === "project token" && (
-                  <>
-                    <SecondaryButton className="w-7rem" onClick={() => setPaymentMethod("USDC")}>
-                      USDC
-                    </SecondaryButton>
-                    <PrimaryButton className="w-7rem">project token</PrimaryButton>
-                  </>
-                )}
+              <div className="w-[25%]">
+                <Input
+                  id="fundingAmt"
+                  name="fundingAmt"
+                  type="number"
+                  className="!p-3 rounded-md font-medium"
+                  placeholder="max number of concurrent jobs"
+                />
               </div>
             </div>
-            <div className="flex items-center w-full gap-8 justify-between">
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Distribution Strategy</h4>
-                <CustomSelect
-                  value={distributionStrategy}
-                  onChange={(e: any) => setDistributionStrategy(e.target.value)}
-                  label={distributionStrategy ?? "Select Distribution Strategy"}
-                  className="!border-custom-border-200 !shadow-none"
-                  input
-                >
-                  <CustomSelect.Option className="w-full" value={"recursive non-blocking"}>
-                    recursive non-blocking
-                  </CustomSelect.Option>
-                </CustomSelect>
-              </div>
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Issue Builder</h4>
-                <CustomSelect
-                  value={issueBuilder}
-                  onChange={(e: any) => setIssueBuilder(e.target.value)}
-                  label={issueBuilder ?? "Select Issue Builder"}
-                  className="!border-custom-border-200 !shadow-none"
-                  input
-                >
-                  <CustomSelect.Option className="w-full" value={"defi-os.com"}>
-                    defi-os.com
-                  </CustomSelect.Option>
-                </CustomSelect>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pr-5 py-3.5 border-b border-custom-border-200">
-            <h3 className="text-xl font-medium">privacy</h3>
-          </div>
-
-          <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between gap-x-8 gap-y-2 border-b border-custom-border-200 bg-custom-background-100 p-4">
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
               <div className="flex items-start gap-3">
-                <div className="flex items-center justify-center p-3 rounded bg-custom-background-90">
-                  <AccountTreeOutlined className="w-6 h-6" />
-                </div>
                 <div className="">
-                  <h4 className="text-sm font-medium">Task Anonymization</h4>
+                  <h4 className="text-sm font-medium">Dependency Depth</h4>
                   <p className="text-sm text-custom-text-200 tracking-tight">
-                    we will help you create a synthetic copy of your issues without exposing
-                    sensitive information using AI
+                    Choose the number of dependencies that should be checked for at all times
+                  </p>
+                </div>
+              </div>
+              <div className="w-[25%]">
+                <Input
+                  id="depDepth"
+                  name="DepDepth"
+                  type="number"
+                  className="!p-3 rounded-md font-medium"
+                  placeholder="dependency depth 1 to Max"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="text-xl font-bold">Privacy</div>
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
+              <div className="flex items-start gap-3">
+                <div className="">
+                  <h4 className="text-sm font-medium">Code Anonymization</h4>
+                  <p className="text-sm text-custom-text-200 tracking-tight">
+                    Let Plan&apos;s AI automatically anonymize your code before sending the task
+                    over to freelancers
                   </p>
                 </div>
               </div>
@@ -263,37 +241,38 @@ const AutoscalingSettings: NextPage = () => {
                 size="lg"
               />
             </div>
+          </div>
 
-            <div className="flex items-center w-full gap-8 justify-between">
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Candidate Picker</h4>
-                <CustomSelect
-                  value={candidatePicker}
-                  onChange={(e: any) => setCandidatePicker(e.target.value)}
-                  label={candidatePicker ?? "Select Candidate Picker"}
-                  className="!border-custom-border-200 !shadow-none"
-                  input
-                >
-                  <CustomSelect.Option className="w-full" value={"GPT-4"}>
-                    GPT-4
-                  </CustomSelect.Option>
-                </CustomSelect>
+          <div className="flex flex-col gap-4">
+            <div className="text-xl font-bold">Outsourced Developer Picker</div>
+            <div className="flex items-center justify-between gap-x-8 gap-y-2 border rounded-lg border-custom-border-200 bg-custom-background-100 p-4">
+              <div className="flex items-start gap-3">
+                <div className="">
+                  <h4 className="text-sm font-medium">Select AI model</h4>
+                  <p className="text-sm text-custom-text-200 tracking-tight">
+                    While the most advanced models are usually great for code anonymization,
+                    selecting viable & skilled developers can be achieved with a less advanced &
+                    cheaper model.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-3 w-full">
-                <h4 className="text-sm">Incentive Aligner</h4>
-                <CustomSelect
-                  value={incentiveAligner}
-                  onChange={(e: any) => setIncentiveAligner(e.target.value)}
-                  label={incentiveAligner ?? "Select Incentive Aligner"}
-                  className="!border-custom-border-200 !shadow-none"
-                  input
-                >
-                  <CustomSelect.Option className="w-full" value={"GPT-3.5-Turbo-Instruct"}>
-                    GPT-3.5-Turbo-Instruct
-                  </CustomSelect.Option>
-                </CustomSelect>
-              </div>
+              <CustomSelect
+                value={candidatePicker}
+                onChange={(e: any) => setCandidatePicker(e.target.value)}
+                label={candidatePicker ?? "Select Candidate Picker"}
+                className="!border-custom-border-200 w-[25%] !shadow-none"
+                input
+              >
+                <CustomSelect.Option className="w-full" value={"GPT-4"}>
+                  GPT-4
+                </CustomSelect.Option>
+              </CustomSelect>
             </div>
+          </div>
+
+          <div className="text-md underline w-full flex items-center justify-center">
+            Already outsourcing to external developers?
+            <br /> Send us their details and we&apos;ll onboard them!
           </div>
         </div>
       </div>
