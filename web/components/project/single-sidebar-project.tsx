@@ -24,6 +24,8 @@ import {
   FilterNoneOutlined,
   PhotoFilterOutlined,
   SettingsOutlined,
+  AccountTreeOutlined,
+  BusinessCenterOutlined,
 } from "@mui/icons-material";
 import { PenSquare } from "lucide-react";
 // helpers
@@ -74,6 +76,16 @@ const navigation = (workspaceSlug: string, projectId: string) => [
     name: "Pages",
     href: `/${workspaceSlug}/projects/${projectId}/pages`,
     Icon: ArticleOutlined,
+  },
+  {
+    name: "Dependancies",
+    href: `/${workspaceSlug}/projects/${projectId}/dependancies`,
+    Icon: AccountTreeOutlined,
+  },
+  {
+    name: "Jobs",
+    href: `/${workspaceSlug}/projects/${projectId}/jobs`,
+    Icon: BusinessCenterOutlined,
   },
   {
     name: "Settings",

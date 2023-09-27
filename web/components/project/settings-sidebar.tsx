@@ -42,6 +42,14 @@ export const SettingsSidebar = () => {
       label: "Automations",
       href: `/${workspaceSlug}/projects/${projectId}/settings/automations`,
     },
+    {
+      label: "Autoscaling",
+      href: `/${workspaceSlug}/projects/${projectId}/settings/autoscaling`,
+    },
+    {
+      label: "Billing",
+      href: `/${workspaceSlug}/projects/${projectId}/settings/billing`,
+    },
   ];
 
   const workspaceLinks: Array<{
