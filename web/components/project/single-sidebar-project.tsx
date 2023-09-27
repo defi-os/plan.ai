@@ -78,8 +78,8 @@ const navigation = (workspaceSlug: string, projectId: string) => [
     Icon: ArticleOutlined,
   },
   {
-    name: "Dependancies",
-    href: `/${workspaceSlug}/projects/${projectId}/dependancies`,
+    name: "Dependencies",
+    href: `/${workspaceSlug}/projects/${projectId}/dependencies`,
     Icon: AccountTreeOutlined,
   },
   {

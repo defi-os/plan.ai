@@ -22,7 +22,7 @@ import type { NextPage } from "next";
 // fetch-keys
 import { PROJECT_DETAILS, INBOX_LIST } from "constants/fetch-keys";
 
-const ProjectDependancies: NextPage = () => {
+const ProjectDependencies: NextPage = () => {
   const [analyticsModal, setAnalyticsModal] = useState(false);
 
   const router = useRouter();
@@ -48,17 +48,17 @@ const ProjectDependancies: NextPage = () => {
           <Breadcrumbs>
             <BreadcrumbItem title="Projects" link={`/${workspaceSlug}/projects`} />
             <BreadcrumbItem
-              title={`${truncateText(projectDetails?.name ?? "Project", 32)} Dependancies`}
+              title={`${truncateText(projectDetails?.name ?? "Project", 32)} Dependencies`}
             />
           </Breadcrumbs>
         }
         bg="secondary"
       >
         <div className="h-full w-full flex flex-col">
-          Dependancies
+          Dependencies
         </div>
       </ProjectAuthorizationWrapper>
   );
 };
 
-export default ProjectDependancies;
+export default ProjectDependencies;

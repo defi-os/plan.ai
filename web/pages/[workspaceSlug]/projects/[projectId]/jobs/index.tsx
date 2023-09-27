@@ -55,7 +55,7 @@ const ProjectJobs: NextPage = () => {
         bg="secondary"
       >
         <div className="h-full w-full flex flex-col">
-          Dependancies
+          Dependencies
         </div>
       </ProjectAuthorizationWrapper>
   );

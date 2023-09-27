@@ -69,7 +69,7 @@ const CustomSelect = ({
       leaveTo="transform opacity-0 scale-95"
     >
       <Listbox.Options
-        className={`absolute z-10 border border-custom-border-300 mt-1 origin-top-right overflow-y-auto rounded-md bg-custom-background-90 text-xs shadow-lg focus:outline-none ${
+        className={`absolute z-10 border border-custom-border-300 w-full mt-1 origin-top-right overflow-y-auto rounded-md bg-custom-background-90 text-xs shadow-lg focus:outline-none ${
           position === "left" ? "left-0 origin-top-left" : "right-0 origin-top-right"
         } ${verticalPosition === "top" ? "bottom-full mb-1" : "mt-1"} ${
           maxHeight === "lg"
