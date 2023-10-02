@@ -73,18 +73,18 @@ const navigation = (workspaceSlug: string, projectId: string) => [
     Icon: PhotoFilterOutlined,
   },
   {
+    name: "Open Source",
+    href: `/${workspaceSlug}/projects/${projectId}/open-source`,
+    Icon: PhotoFilterOutlined,
+  },
+  {
     name: "Pages",
     href: `/${workspaceSlug}/projects/${projectId}/pages`,
     Icon: ArticleOutlined,
   },
   {
-    name: "Dependencies",
-    href: `/${workspaceSlug}/projects/${projectId}/dependencies`,
-    Icon: AccountTreeOutlined,
-  },
-  {
-    name: "Jobs",
-    href: `/${workspaceSlug}/projects/${projectId}/jobs`,
+    name: "Tasks",
+    href: `/${workspaceSlug}/projects/${projectId}/tasks`,
     Icon: BusinessCenterOutlined,
   },
   {

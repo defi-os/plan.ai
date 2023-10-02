@@ -20,7 +20,7 @@ import {
 } from "components/states";
 import { SettingsSidebar } from "components/project";
 // ui
-import { Loader } from "components/ui";
+import { Loader, SecondaryButton } from "components/ui";
 import { BreadcrumbItem, Breadcrumbs } from "components/breadcrumbs";
 // icons
 import { PlusIcon } from "@heroicons/react/24/outline";
@@ -91,13 +91,13 @@ const StatesSettings: NextPage = () => {
                           <h4 className="text-base font-medium text-custom-text-200 capitalize">
                             {key}
                           </h4>
-                          <button
+                          <SecondaryButton
                             type="button"
                             className="flex items-center gap-2 text-custom-primary-100 px-2 hover:text-custom-primary-200 outline-none"
                             onClick={() => setActiveGroup(key as keyof StateGroup)}
                           >
                             <PlusIcon className="h-4 w-4" />
-                          </button>
+                          </SecondaryButton>
                         </div>
                         <div className="flex flex-col gap-2 rounded">
                           {key === activeGroup && (

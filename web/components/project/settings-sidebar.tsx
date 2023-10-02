@@ -43,8 +43,8 @@ export const SettingsSidebar = () => {
       href: `/${workspaceSlug}/projects/${projectId}/settings/automations`,
     },
     {
-      label: "Autoscaling",
-      href: `/${workspaceSlug}/projects/${projectId}/settings/autoscaling`,
+      label: "Outsource & Scale",
+      href: `/${workspaceSlug}/projects/${projectId}/settings/outsource-scale`,
     },
     {
       label: "Billing",

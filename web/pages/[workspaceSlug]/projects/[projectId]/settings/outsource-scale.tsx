@@ -37,17 +37,13 @@ import { PROJECT_DETAILS, WORKSPACE_INTEGRATIONS } from "constants/fetch-keys";
 // helper
 import { truncateText } from "helpers/string.helper";
 
-const AutoscalingSettings: NextPage = () => {
+const OutsourceScaleSettings: NextPage = () => {
   const [autoscalingToggle, setAutoscalingToggle] = useState(false);
   const [smartPrioritization, setSmartPrioritization] = useState(false);
   const [dependencyResolution, setDependencyResolution] = useState(false);
   const [taskAnonymization, setTaskAnonymization] = useState(false);
 
-  const [paymentMethod, setPaymentMethod] = useState<"USDC" | "project token">("USDC");
-  const [distributionStrategy, setDistributionStrategy] = useState("recursive non-blocking");
-  const [issueBuilder, setIssueBuilder] = useState("defi-os.com");
   const [candidatePicker, setCandidatePicker] = useState("GPT-4");
-  const [incentiveAligner, setIncentiveAligner] = useState("GPT-3.5-Turbo-Instruct");
 
   const router = useRouter();
   const { workspaceSlug, projectId } = router.query;
@@ -280,4 +276,4 @@ const AutoscalingSettings: NextPage = () => {
   );
 };
 
-export default AutoscalingSettings;
+export default OutsourceScaleSettings;
